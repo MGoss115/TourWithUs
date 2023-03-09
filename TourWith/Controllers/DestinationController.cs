@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TourWith.Models;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using TourWith.Models;
 
 namespace TourWith.Controllers;
 
@@ -21,6 +22,13 @@ public class DestinationController : Controller
         {
             return HttpContext.Session.GetInt32("uid");
         }
+    }
+
+    [SessionCheck]
+    [HttpGet("destination")]
+    public IActionResult Result()
+    {
+        return View();
     }
 
 }

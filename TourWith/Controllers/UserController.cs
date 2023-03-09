@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using TourWith.Models;
 
-namespace WeddingPlanner.Controllers;
+namespace TourWith.Controllers;
 
 public class UserController : Controller
 {
@@ -82,7 +82,7 @@ public class UserController : Controller
                 else
                 {
                     HttpContext.Session.SetInt32("uid", userInDb.UserId);
-                    HttpContext.Session.SetString("name", userInDb.FirstName + " " + userInDb.LastName);
+                    HttpContext.Session.SetString("name", userInDb.FirstName);
                     return RedirectToAction("Success");
                 }
             }
