@@ -9,6 +9,7 @@ namespace TourWith.Controllers;
 
 public class DestinationController : Controller
 {
+    HttpClientHandler _clientHandler = new HttpClientHandler();
 
     private MyContext _context;
 
