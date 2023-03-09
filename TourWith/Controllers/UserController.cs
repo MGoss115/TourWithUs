@@ -1,6 +1,4 @@
-// Add this using statement to be able to use PasswordHasher
 using Microsoft.AspNetCore.Identity;
-// Other using statements
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -43,9 +41,8 @@ public class UserController : Controller
         }
         else
         {
-            PasswordHasher<User> hash = new PasswordHasher<User>(); // This creates a new instance of the password hasher so that we can use it on the next line
+            PasswordHasher<User> hash = new PasswordHasher<User>();
             newUser.Password = hash.HashPassword(newUser, newUser.Password);
-            // let newUser.Password equal a hashed version of the password
             _context.Users.Add(newUser);
             _context.SaveChanges();
 
@@ -65,10 +62,10 @@ public class UserController : Controller
         else
         {
             User? userInDb = _context.Users.FirstOrDefault(u => u.Email == getUser.LoginEmail);
-            // Please go to db and see if there is an email that matched the email coming from the form
+
             if (userInDb == null)
             {
-                // If email is not in database go back to Index with new error for loginemail
+
                 ModelState.AddModelError("LoginEmail", "Invalid Email");
                 return View("Index");
             }
@@ -76,9 +73,9 @@ public class UserController : Controller
             {
                 PasswordHasher<LoginUser> hash = new PasswordHasher<LoginUser>();
                 var result = hash.VerifyHashedPassword(getUser, userInDb.Password, getUser.LoginPassword);
-                // has the getUser password and see if they match will give bool type response
+
                 if (result == 0)
-                { // meaning not a match
+                {
                     ModelState.AddModelError("LoginPassword", "Invalid Password");
                     return View("Index");
                 }
@@ -113,13 +110,10 @@ public class SessionCheckAttribute : ActionFilterAttribute
 {
     public override void OnActionExecuting(ActionExecutingContext context)
     {
-        // Find the session, but remember it may be null so we need int?
         int? uid = context.HttpContext.Session.GetInt32("uid");
-        // Check to see if we got back null
+
         if (uid == null)
         {
-            // Redirect to the Index page if there was nothing in session
-            // "Home" here is referring to "HomeController", you can use any controller that is appropriate here
             context.Result = new RedirectToActionResult("Index", "User", null);
         }
     }

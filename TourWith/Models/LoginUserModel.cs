@@ -12,7 +12,7 @@ public class LoginUser
     public string LoginEmail { get; set; }
 
     [Required(ErrorMessage = "is required.")]
-    [DataType(DataType.Password)] // auto fills input type attr
+    [DataType(DataType.Password)]
     [Display(Name = "Password")]
     public string LoginPassword { get; set; }
 }
