@@ -1,13 +1,6 @@
-using System.Net;
-using System.IO;
-using System.Text;
 using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TourWith.Models;
-using Newtonsoft.Json.Linq;
 
 namespace TourWith.Controllers;
 
