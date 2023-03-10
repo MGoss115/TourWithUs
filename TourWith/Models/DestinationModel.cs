@@ -13,7 +13,6 @@ public class Destination
     public DateTime Date { get; set; }
     public string Image { get; set; }
     public string Budget { get; set; }
-    public string Safety { get; set; }
     public List<Schedule> Book { get; set; } = new List<Schedule>();
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;

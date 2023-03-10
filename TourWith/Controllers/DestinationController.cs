@@ -40,7 +40,8 @@ public class DestinationController : Controller
             var res = new Destination
             {
                 Location = item.place,
-                Image = item.img
+                Image = item.img,
+                Budget = item.cost
             };
             destinationList.Add(res);
         }
