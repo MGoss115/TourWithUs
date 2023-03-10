@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
+builder.Services.AddHttpClient();
+
 
 builder.Services.AddDbContext<MyContext>(options =>
 {
