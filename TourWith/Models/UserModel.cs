@@ -26,6 +26,7 @@ public class User
     [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
     public string Password { get; set; }
     public List<Schedule> Booked { get; set; } = new List<Schedule>();
+    public List<Destination> UserDestination { get; set; } = new List<Destination>();
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

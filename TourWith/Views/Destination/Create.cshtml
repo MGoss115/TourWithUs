@@ -1,0 +1,34 @@
+@model List<Destination>
+
+<form  action="/destination" method="post">
+  @if (Model != null) 
+  { @foreach (var res in Model)
+    {
+        <div>
+             <section>
+                <h2 asp-for=@res.Location>@res.Location</h2>
+                <span asp-validation-for=@res.Location></span>
+            </section>
+                <img asp-for=@res.Image src="@res.Image" alt="@res.Location" />
+            <section>
+                <h5 asp-for=@res.Comment>@res.Comment</h5>
+                <span asp-validation-for=@res.Comment></span>
+            </section>
+            <section>
+                <h4 asp-for=@res.Budget>$@res.Budget</h4>
+                <span asp-validation-for=@res.Budget></span>
+            </section>
+            <button class="btn btn-success">Add To List</button>
+        </div>
+        <br>
+    }
+}
+    
+</form >
+
+
+
+
+
+
+
