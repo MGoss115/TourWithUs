@@ -1,6 +1,6 @@
-html {
+/* html {
   font-size: 14px;
-}
+} */
 
 @media (min-width: 768px) {
   html {
@@ -8,11 +8,33 @@ html {
   }
 }
 
-html {
+/* html {
   position: relative;
   min-height: 100%;
 }
 
 body {
   margin-bottom: 60px;
+} */
+.col {
+  width: 45%;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: silver;
+  align-items: center;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 5rem;
+}
+
+img {
+  width: 100%;
 }

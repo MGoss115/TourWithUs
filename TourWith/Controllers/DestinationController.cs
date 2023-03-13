@@ -30,8 +30,8 @@ public class DestinationController : Controller
     public IActionResult Dashboard()
     {
         List<Destination> allTrips = _context.Destinations
-        .Include(d => d.User)
-        .Include(d => d.Book)
+        .Include(u => u.User)
+        .Where(u => u.UserId == (int)uid)
         .ToList();
         return View(allTrips);
     }
@@ -43,7 +43,7 @@ public class DestinationController : Controller
         var response = await _httpClient.GetAsync(url);
         var content = await response.Content.ReadAsStringAsync();
         var data = JsonConvert.DeserializeObject<dynamic>(content);
-        Console.WriteLine($" here {data}");
+        // Console.WriteLine($" here {data}");
 
         var destinationList = new List<Destination>();
         foreach (var item in data)
