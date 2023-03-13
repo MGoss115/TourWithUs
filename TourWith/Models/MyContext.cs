@@ -5,6 +5,10 @@ namespace TourWith.Models;
 
 public class MyContext : DbContext
 {
+    public MyContext()
+    {
+    }
+
     public MyContext(DbContextOptions options) : base(options) { }
 
     public DbSet<Destination> Destinations { get; set; }

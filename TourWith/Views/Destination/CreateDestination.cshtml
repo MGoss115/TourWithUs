@@ -1,0 +1,59 @@
+@* @model List<Destination>
+
+  @if (Model != null) 
+  { @foreach (var res in Model)
+    {
+    <form  action="/destination" method="post">
+        <div>
+             <section>
+                <h2 >@res.Location</h2>
+                <input type="hidden" value="@res.Location" asp-for="@res.Location"> 
+                <span asp-validation-for=@res.Location></span>
+            </section>Y
+                <img  src="@res.Image" alt="@res.Location" />
+                 <input type="hidden" value="@res.Image" asp-for="@res.Image">
+            <section>
+                <h5 >@res.Comment</h5>
+                 <input type="hidden" value="@res.Comment" asp-for="@res.Comment">
+                <span asp-validation-for=@res.Comment></span>
+            </section>
+            <section>
+                <h4>$@res.Budget</h4>
+                 <input type="hidden" value="@res.Budget" asp-for="@res.Budget">
+                <span asp-validation-for=@res.Budget></span>
+            </section>
+            <button class="btn btn-success">Add To List</button>
+        </div>
+        <br>
+</form >
+    }
+} *@
+
+
+@model List<Destination>
+
+<h1>Destinations</h1>
+
+@foreach (var destination in Model)
+{
+    <div>
+        <h3>@destination.Location</h3>
+        <img src="@destination.Image" alt="@destination.Location" />
+        <h4>@destination.Budget</h4>
+        <h5>@destination.Comment</h5>
+        <form action="/destination" method="post" >
+            <input type="hidden" name="Location" value="@destination.Location" />
+            <input type="hidden" name="Image" value="@destination.Image" />
+            <input type="hidden" name="Budget" value="@destination.Budget" />
+            <input type="hidden" name="Comment" value="@destination.Comment" />
+            <button type="submit" class="btn btn-primary">Add To List</button>
+        </form>
+        <br>
+    </div>
+}
+
+
+
+
+
+
