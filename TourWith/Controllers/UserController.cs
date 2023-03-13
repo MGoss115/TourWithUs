@@ -83,7 +83,7 @@ public class UserController : Controller
                 {
                     HttpContext.Session.SetInt32("uid", userInDb.UserId);
                     HttpContext.Session.SetString("name", userInDb.FirstName);
-                    return RedirectToAction("Success");
+                    return Redirect("/adddestination");
                 }
             }
         }

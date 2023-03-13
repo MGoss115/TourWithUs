@@ -26,7 +26,7 @@ public class DestinationController : Controller
     public List<Destination> destinationList = new List<Destination>();
 
     [SessionCheck]
-    [HttpGet("booked")]
+    [HttpGet("destinations")]
     public IActionResult Dashboard()
     {
         List<Destination> allTrips = _context.Destinations
@@ -36,7 +36,7 @@ public class DestinationController : Controller
         return View(allTrips);
     }
 
-    [HttpGet("destination")]
+    [HttpGet("adddestination")]
     public async Task<IActionResult> CreateDestination()
     {
         var url = "https://persian-blue-hen-slip.cyclic.app/bookhotels";
@@ -60,15 +60,21 @@ public class DestinationController : Controller
         return View(destinationList);
     }
 
-    [HttpPost("destination")]
+    [HttpPost("adddestination")]
     public async Task<IActionResult> AddDestination(Destination newDestination)
     {
 
         newDestination.UserId = (int)uid;
-
-        _context.Destinations.Add(newDestination);
-        await _context.SaveChangesAsync();
-        return RedirectToAction("CreateDestination");
+        if (ModelState.IsValid)
+        {
+            _context.Destinations.Add(newDestination);
+            await _context.SaveChangesAsync();
+            return Redirect("/adddestination");
+        }
+        else
+        {
+            return View("CreateDestination");
+        }
     }
 }
 
