@@ -31,11 +31,14 @@ public class DestinationController : Controller
     {
         List<Destination> allTrips = _context.Destinations
         .Include(u => u.User)
+        .Include(u => u.Book)
+        .ThenInclude(going => going.User)
         .Where(u => u.UserId == (int)uid)
         .ToList();
         return View(allTrips);
     }
 
+    [SessionCheck]
     [HttpGet("adddestination")]
     public async Task<IActionResult> CreateDestination()
     {
@@ -54,6 +57,7 @@ public class DestinationController : Controller
                 Image = item.img,
                 Budget = item.cost,
                 Comment = item.title,
+                Days = item.days,
             };
             destinationList.Add(res);
         }

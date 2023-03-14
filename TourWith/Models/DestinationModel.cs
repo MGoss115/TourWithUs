@@ -9,11 +9,11 @@ public class Destination
     public int DestinationId { get; set; }
     // add more attributes here
     public string Location { get; set; }
-
     public DateTime Date { get; set; }
     public string Image { get; set; }
     public string? Budget { get; set; }
     public string Comment { get; set; }
+    public string Days { get; set; }
     public int UserId { get; set; }
     public User? User { get; set; }
     public List<Schedule> Book { get; set; } = new List<Schedule>();

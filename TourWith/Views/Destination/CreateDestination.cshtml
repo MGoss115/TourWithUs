@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="~/css/site.css">
 @model List<Destination>
 
-<h1>Destinations</h1>
+<h1>@Context.Session.GetString("name"), Checkout Out Our Destinations</h1>
 
 @foreach (var destination in Model)
 {
@@ -10,15 +10,14 @@
         <div class="card">
         <h3>@destination.Location</h3>
         <img src="@destination.Image" alt="@destination.Location" />
-        <h4>$@destination.Budget</h4>
-        <h5>@destination.Comment</h5>
-      
+        <h4>$@destination.Budget</h4>     
         </div>
         <form action="/adddestination" method="post" >
             <input type="hidden" name="Location" value="@destination.Location" />
             <input type="hidden" name="Image" value="@destination.Image" />
             <input type="hidden" name="Budget" value="@destination.Budget" />
             <input type="hidden" name="Comment" value="@destination.Comment" />
+            <input type="hidden" name="Days" value="@destination.Days" />
             <button type="submit" onclick="showMessage()" class="btn btn-primary">Add To List</button>
         </form>
         <br>

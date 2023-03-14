@@ -1,6 +1,6 @@
 @model List<Destination>
 
-<h1>List of Destinations</h1>
+<h1>List of Destinations for, @Context.Session.GetString("name")</h1>
 
 @foreach (Destination des in Model)
 {
@@ -9,7 +9,6 @@
             <p>@des.Location</p>
             <img src="@des.Image" alt="@des.Location">
             <p>$@des.Budget</p>
-            <p>@des.Comment</p>
         </div>
     </div>
 
