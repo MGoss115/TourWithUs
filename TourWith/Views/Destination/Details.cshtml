@@ -11,3 +11,17 @@
     @Model.Comment <br>
     @Model.Days 
 </p>
+@{ bool alreadyBooked = @Model.Book.Any(b => b.UserId == Context.Session.GetInt32("uid")); }
+
+    <form action="/destinations/@Model.DestinationId/book" method="POST">
+      <button>
+        @if (alreadyBooked)
+        {
+          <span>UnBook</span>
+        }
+        else
+        {
+          <span>Book</span>
+        }
+      </button>
+    </form>

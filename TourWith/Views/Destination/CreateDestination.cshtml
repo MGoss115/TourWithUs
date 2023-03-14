@@ -15,8 +15,8 @@
         <div class="card">
         <h3>@destination.Location</h3>
         <img src="@destination.Image" alt="@destination.Location" />
-        <h4>$@destination.Budget</h4>     
-        </div>
+        <h4>$@destination.Budget</h4>
+        <br>     
         <form action="/adddestination" method="post" >
             <input type="hidden" name="Location" value="@destination.Location" />
             <input type="hidden" name="Image" value="@destination.Image" />
@@ -25,6 +25,7 @@
             <input type="hidden" name="Days" value="@destination.Days" />
             <button type="submit" onclick="showMessage()" class="btn btn-primary">Add To List</button>
         </form>
+        </div>
         <br>
     </div>
 }

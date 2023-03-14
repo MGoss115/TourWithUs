@@ -1,3 +1,6 @@
+ <link rel="stylesheet" href="~/js/site.js">
+<link rel="stylesheet" href="~/css/site.css">
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -15,5 +18,9 @@
             <p>$@des.Budget</p>
         </div>
          <button class="btn btn-secondary"><a href="/destinations/@des.DestinationId">View</a></button>
+        <form action="/destinations/@des.DestinationId/delete" method="post">
+          <button type="submit" onclick="deleteMessage()" class="btn btn-danger">Delete</button>
+        </form>
     </div>
+
 }

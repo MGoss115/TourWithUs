@@ -94,5 +94,45 @@ public class DestinationController : Controller
             return View("CreateDestination");
         }
     }
+
+    [SessionCheck]
+    [HttpPost("destinations/{destinatonId}/book")]
+    public IActionResult BookedNow(int destinationId)
+    {
+        Schedule? alreadyBooked = _context.Scheduled
+        .FirstOrDefault(b => b.UserId == (int)uid && b.DestinationId == destinationId);
+
+        if (alreadyBooked != null)
+        {
+            _context.Scheduled.Remove(alreadyBooked);
+        }
+        else
+        {
+            Schedule newBook = new Schedule()
+            {
+                DestinationId = destinationId,
+                UserId = (int)uid
+            };
+            _context.Scheduled.Add(newBook);
+        }
+        _context.SaveChanges();
+        return Redirect("/destinations");
+    }
+
+    [SessionCheck]
+    [HttpPost("destinations/{destinationId}/delete")]
+    public IActionResult DeleteDestination(int destinationId)
+    {
+        Destination destination = _context.Destinations
+        .SingleOrDefault(d => d.DestinationId == destinationId);
+
+        if (destination != null && destination.UserId == (int)uid)
+        {
+            _context.Destinations.Remove(destination);
+            _context.SaveChanges();
+        }
+        return Redirect("/destinations");
+    }
+
 }
 
