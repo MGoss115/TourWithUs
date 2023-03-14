@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Destination
+
+<h3>@Model.Location</h3>
+<img src="@Model.Image" alt="@Model.Location">
+<p>
+    $@Model.Budget <br>
+    @Model.Comment <br>
+    @Model.Days 
+</p>

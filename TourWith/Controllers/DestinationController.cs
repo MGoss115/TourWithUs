@@ -39,6 +39,20 @@ public class DestinationController : Controller
     }
 
     [SessionCheck]
+    [HttpGet("destinations/{destinationId}")]
+    public IActionResult Details(int destinationId)
+    {
+        Destination? destination = _context.Destinations
+        .FirstOrDefault(d => d.DestinationId == destinationId);
+        if (destination == null)
+        {
+            return RedirectToAction("All");
+        }
+
+        return View(destination);
+    }
+
+    [SessionCheck]
     [HttpGet("adddestination")]
     public async Task<IActionResult> CreateDestination()
     {

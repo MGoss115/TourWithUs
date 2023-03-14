@@ -1,5 +1,10 @@
  <link rel="stylesheet" href="~/js/site.js">
 <link rel="stylesheet" href="~/css/site.css">
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
 @model List<Destination>
 
 <h1>@Context.Session.GetString("name"), Checkout Out Our Destinations</h1>
