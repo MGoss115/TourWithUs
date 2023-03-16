@@ -4,7 +4,7 @@ body {
     font-family: 'Shadows Into Light', cursive;
     /* background: rgb(143, 115, 143); */
     background: linear-gradient(rgba(0, 0, 0, 0.551), rgba(0, 0, 0, 0.6)), url("../images/about.jpeg") center/cover no-repeat fixed;
-    color: rgba(48, 120, 154, 0.912);
+    color: rgba(23, 59, 76, 0.912);
     font-size: 20px;
   
 }
@@ -36,7 +36,7 @@ a {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: rgba(241, 233, 233, 0.435);
+    background-color: rgba(241, 233, 233, 0.123);
     align-items: center;
     margin: 1rem;
     padding: 2rem;
@@ -47,12 +47,35 @@ a {
     margin-top: 50px;
 }
 
+.data {
+    margin-top: 85px;
+    margin-left: 20px;
+    color: whitesmoke;
+}
+
 img {
     width: 95%;
 }
 
 p {
-    width: 75%;
+    width: 95%;
+}
+
+.view {
+   border-bottom: solid 5px black;
+}
+
+.detail {
+    margin-top: 100px;
+}
+
+.para2 {
+    font-size: 25px;
+    color: rgb(235, 228, 219);
+}
+
+.btn2 {
+    margin: 10px;
 }
 
 .navbar {

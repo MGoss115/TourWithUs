@@ -5,10 +5,10 @@
 @model Destination
 
 <main class="col">
-  <div class="card">
-    <h3>@Model.Location</h3>
+  <div class="card detail">
+    <h3 class="view">@Model.Location</h3>
     <img src="@Model.Image" alt="@Model.Location">
-      <p>
+      <p class="para">
           $@Model.Budget <br>
           @Model.Comment <br>
           @Model.Days 

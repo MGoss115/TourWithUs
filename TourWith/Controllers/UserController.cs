@@ -47,8 +47,8 @@ public class UserController : Controller
             _context.SaveChanges();
 
             HttpContext.Session.SetInt32("uid", newUser.UserId);
-            HttpContext.Session.SetString("name", newUser.FirstName + " " + newUser.LastName);
-            return RedirectToAction("Success");
+            HttpContext.Session.SetString("name", newUser.FirstName);
+            return Redirect("/adddestination");
         }
     }
 

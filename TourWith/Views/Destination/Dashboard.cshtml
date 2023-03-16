@@ -5,15 +5,14 @@
 @model List<Destination>
 
 
-        <h1>List of Destinations for, @Context.Session.GetString("name")</h1>
+        <h1 class="data">List of Destinations for, @Context.Session.GetString("name")</h1>
         @foreach (Destination des in Model)
         {
             <div class="col">
                 <div class="card">
-                    <p>@des.Location</p>
+                    <p class="para2">@des.Location $@des.Budget</p>
                     <img src="@des.Image" alt="@des.Location">
-                    <p>$@des.Budget</p>
-                <button class="btn btn-secondary"><a href="/destinations/@des.DestinationId">View</a></button>
+                <button class="btn2 btn btn-secondary"><a href="/destinations/@des.DestinationId">View</a></button>
                 <form asp-controller="Destination" asp-action="BookedNow" asp-route-destinationId="@des.DestinationId" method="POST">
                 <button class="btn btn-primary" >
                     @{ bool alreadyBooked = des.Book.Any(b => b.UserId == Context.Session.GetInt32("uid")); }

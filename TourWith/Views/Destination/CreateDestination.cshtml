@@ -5,7 +5,7 @@
 
 @model List<Destination>
 
-<h1>@Context.Session.GetString("name"), Checkout Out Our Destinations</h1>
+<h1 class="data">@Context.Session.GetString("name"), Checkout Out Our Destinations</h1>
 
 @foreach (var destination in Model)
 {
