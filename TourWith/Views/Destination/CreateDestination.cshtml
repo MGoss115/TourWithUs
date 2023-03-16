@@ -9,26 +9,30 @@
 
 @foreach (var destination in Model)
 {
-        int num = @destination.Book.Count;
+     
          <main class="col">
             <div class="card">
                 <img img src="@destination.Image" alt="@destination.Location">
                     <h5 class="info">@destination.Location <span>$@destination.Budget</span></h5>
                     <p>Last updated 3 mins ago</p>
-                    <p>Booked by: @num people</p>
-                    @{Console.WriteLine(num);}
+                    <p type="text" id="num" onmouseover="genNumber()">25</p> 
+                    <h5 class="random">people have booked this destination!</h5>                
                 <form action="/adddestination" method="post" >
                     <input type="hidden" name="Location" value="@destination.Location" />
                     <input type="hidden" name="Image" value="@destination.Image" />
                     <input type="hidden" name="Budget" value="@destination.Budget" />
                     <input type="hidden" name="Comment" value="@destination.Comment" />
                     <input type="hidden" name="Days" value="@destination.Days" />
-                    <button type="submit" onclick="showMessage()" class="btn btn-outline-dark">Add To List</button>
+                    <button type="submit" onclick="updateText()" id="button" class="btn btn-outline-dark">Add To List</button>
                 </form> 
+                <p id="update"></p>
                   <br>
                 </div>
         </main>
 }
+<script type="text/javascript">
+    genNumber()
+</script>
 
 
 

@@ -4,9 +4,12 @@ body {
     font-family: 'Shadows Into Light', cursive;
     /* background: rgb(143, 115, 143); */
     background: linear-gradient(rgba(0, 0, 0, 0.551), rgba(0, 0, 0, 0.6)), url("../images/about.jpeg") center/cover no-repeat fixed;
-    color: rgba(23, 59, 76, 0.912);
-    font-size: 20px;
-  
+    color: #ddd;
+    font-size: 20px; 
+}
+
+.page {
+    color: azure;
 }
 
 .div1 {
@@ -19,6 +22,7 @@ body {
 section {
     padding: 5px;
     margin-top: 35px;
+    color: azure;
 }
 
 a {
@@ -36,6 +40,7 @@ a {
 .card {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap-reverse;
     background-color: rgba(241, 233, 233, 0.123);
     align-items: center;
     margin: 1rem;
@@ -45,6 +50,8 @@ a {
 
 .info {
     margin-top: 50px;
+    font-size: 25px;
+    border-bottom: dotted 5px peachpuff;
 }
 
 .data {
@@ -62,7 +69,7 @@ p {
 }
 
 .view {
-   border-bottom: solid 5px black;
+   border-bottom: double 5px wheat;
 }
 
 .detail {
@@ -72,6 +79,7 @@ p {
 .para2 {
     font-size: 25px;
     color: rgb(235, 228, 219);
+    border-bottom: solid 2px black;
 }
 
 .btn2 {
@@ -98,7 +106,7 @@ p {
 }
 
 .navbar a:hover {
-    background: #ddd;
+    background: #dddddde4;
     color: black;
 }
 
@@ -208,4 +216,9 @@ p {
     margin-top: 1.25rem;
     margin-bottom: 2rem;
     animation: slideFromLeft 5s ease-in-out 1;
+}
+
+.random {
+    margin-left: -460px;
+    margin-top: -45px;
 }
