@@ -17,6 +17,7 @@
                     <h4>$@destination.Budget</h4>
                     <p>Last updated 3 mins ago</p>
                     <p>Booked by: @num people</p>
+                    @{Console.WriteLine(num);}
                 <form action="/adddestination" method="post" >
                     <input type="hidden" name="Location" value="@destination.Location" />
                     <input type="hidden" name="Image" value="@destination.Image" />
