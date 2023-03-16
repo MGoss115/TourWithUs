@@ -8,8 +8,8 @@
         <h1>List of Destinations for, @Context.Session.GetString("name")</h1>
         @foreach (Destination des in Model)
         {
-            <div class="div1">
-                <div class="div2">
+            <div class="col">
+                <div class="card">
                     <p>@des.Location</p>
                     <img src="@des.Image" alt="@des.Location">
                     <p>$@des.Budget</p>

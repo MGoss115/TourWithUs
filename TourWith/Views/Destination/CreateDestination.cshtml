@@ -10,8 +10,8 @@
 @foreach (var destination in Model)
 {
         int num = @destination.Book.Count;
-         <main>
-            <div class="div2">
+         <main class="col">
+            <div class="card">
                 <img img src="@destination.Image" alt="@destination.Location">
                     <h5>@destination.Location</h5>
                     <h4>$@destination.Budget</h4>

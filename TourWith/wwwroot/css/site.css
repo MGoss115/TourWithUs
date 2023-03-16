@@ -1,0 +1,138 @@
+body {
+    font-family: 'Itim', cursive;
+    /* background: rgb(143, 115, 143); */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/main.jpeg") center/cover no-repeat fixed;
+    color: wheat;
+    font-size: 20px;
+  
+}
+
+.div1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    margin-top: 75px;
+}
+
+section {
+    padding: 5px;
+    margin-top: 75px;
+}
+
+.header {
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+}
+
+/* .nav {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+} */
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.cityNav {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin: 0 auto;
+}
+
+.col {
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: silver;
+    align-items: center;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+img {
+    width: 95%;
+}
+
+#red {
+    color: red;
+}
+
+#blue {
+    color: blue;
+}
+
+.degrees {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cookie {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: silver;
+    padding: 2px;
+    justify-content: space-evenly;
+    border: 3px solid black;
+}
+
+.cookie button {
+    width: 100px;
+    background-color: lightblue;
+    margin: 1.5rem;
+    padding: 2px;
+}
+
+p {
+    width: 75%;
+}
+
+span a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
