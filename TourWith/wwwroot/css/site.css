@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 body {
-    font-family: 'Itim', cursive;
+    font-family: 'Shadows Into Light', cursive;
     /* background: rgb(143, 115, 143); */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/main.jpeg") center/cover no-repeat fixed;
-    color: wheat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/about.jpeg") center/cover no-repeat fixed;
+    color: rgba(48, 120, 154, 0.912);
     font-size: 20px;
   
 }
@@ -62,7 +64,7 @@ a {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: silver;
+    background-color: rgba(241, 233, 233, 0.536);
     align-items: center;
     margin: 1rem;
     padding: 2rem;
@@ -92,7 +94,7 @@ img {
     width: 75%;
     margin: 0 auto;
     align-items: center;
-    background-color: silver;
+    background-color: whitesmoke;
     padding: 2px;
     justify-content: space-evenly;
     border: 3px solid black;
@@ -135,4 +137,85 @@ span a {
 .navbar a:hover {
     background: #ddd;
     color: black;
+}
+
+/* ANIMATION */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* ANIMATION */
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(-200px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translateX(50px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translateX(-50px);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes show {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
 }
