@@ -13,8 +13,7 @@
          <main class="col">
             <div class="card">
                 <img img src="@destination.Image" alt="@destination.Location">
-                    <h5>@destination.Location</h5>
-                    <h4>$@destination.Budget</h4>
+                    <h5 class="info">@destination.Location <span>$@destination.Budget</span></h5>
                     <p>Last updated 3 mins ago</p>
                     <p>Booked by: @num people</p>
                     @{Console.WriteLine(num);}

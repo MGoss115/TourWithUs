@@ -3,7 +3,7 @@
 body {
     font-family: 'Shadows Into Light', cursive;
     /* background: rgb(143, 115, 143); */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/about.jpeg") center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.551), rgba(0, 0, 0, 0.6)), url("../images/about.jpeg") center/cover no-repeat fixed;
     color: rgba(48, 120, 154, 0.912);
     font-size: 20px;
   
@@ -18,40 +18,12 @@ body {
 
 section {
     padding: 5px;
-    margin-top: 75px;
+    margin-top: 35px;
 }
-
-.header {
-    width: 100%;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-h1 {
-    color: white;
-}
-
-/* .nav {
-    width: 35%;
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-} */
 
 a {
     color: white;
     text-decoration: none;
-}
-
-.cityNav {
-    width: 75%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 2px solid black;
-    margin: 0 auto;
 }
 
 .col {
@@ -64,56 +36,23 @@ a {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: rgba(241, 233, 233, 0.536);
+    background-color: rgba(241, 233, 233, 0.435);
     align-items: center;
     margin: 1rem;
     padding: 2rem;
     border-radius: 20px;
 }
 
+.info {
+    margin-top: 50px;
+}
+
 img {
     width: 95%;
 }
 
-#red {
-    color: red;
-}
-
-#blue {
-    color: blue;
-}
-
-.degrees {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.cookie {
-    display: flex;
-    width: 75%;
-    margin: 0 auto;
-    align-items: center;
-    background-color: whitesmoke;
-    padding: 2px;
-    justify-content: space-evenly;
-    border: 3px solid black;
-}
-
-.cookie button {
-    width: 100px;
-    background-color: lightblue;
-    margin: 1.5rem;
-    padding: 2px;
-}
-
 p {
     width: 75%;
-}
-
-span a {
-    color: blue;
-    text-decoration: underline;
 }
 
 .navbar {
@@ -122,6 +61,7 @@ span a {
     position: fixed;
     top: 0;
     width: 100%;
+    cursor: pointer;
 }
 
 .navbar a {
@@ -153,6 +93,11 @@ span a {
         transform: scale(1);
     }
 
+}
+
+.ani {
+    margin-top: 20px;
+    animation: bounce 2s ease infinite;
 }
 
 /* ANIMATION */
@@ -218,4 +163,26 @@ span a {
         opacity: 1;
     }
 
+}
+
+.banner {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner h2 {
+    font-family: var(--ff-secondary);
+    color: white;
+    animation: slideFromRight 5s ease-in-out 1;
+}
+
+.banner h1 {
+    text-transform: uppercase;
+    color: white;
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    animation: slideFromLeft 5s ease-in-out 1;
 }
