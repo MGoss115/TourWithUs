@@ -1,8 +1,5 @@
-﻿// function showMessage() {
-//   alert('This destination has been added to your list!');
-// }
-function updateText() {
-  document.getElementById('update').innerHTML = 'Added to List';
+﻿function showMessage() {
+  alert('This destination has been added to your list!');
 }
 
 function deleteMessage() {
