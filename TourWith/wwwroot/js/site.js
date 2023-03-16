@@ -5,3 +5,7 @@
 function deleteMessage() {
   alert('As you wish. Destination deleted!');
 }
+
+function cancelTrip() {
+  alert('Reservation canceled! You can now remove from your list.');
+}

@@ -95,7 +95,7 @@ public class DestinationController : Controller
     }
 
     [SessionCheck]
-    [HttpPost("destinations/{destinatonId}/book")]
+    [HttpPost("destinations/{destinationId}/book")]
     public IActionResult BookedNow(int destinationId)
     {
         Schedule? alreadyBooked = _context.Scheduled

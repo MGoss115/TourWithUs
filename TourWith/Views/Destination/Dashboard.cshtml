@@ -1,26 +1,34 @@
- <link rel="stylesheet" href="~/js/site.js">
-<link rel="stylesheet" href="~/css/site.css">
-
 @{
     ViewData["Title"] = "Home Page";
 }
 
 @model List<Destination>
 
-<h1>List of Destinations for, @Context.Session.GetString("name")</h1>
 
-@foreach (Destination des in Model)
-{
-    <div class="col">
-        <div class="card">
-            <p>@des.Location</p>
-            <img src="@des.Image" alt="@des.Location">
-            <p>$@des.Budget</p>
-        </div>
-         <button class="btn btn-secondary"><a href="/destinations/@des.DestinationId">View</a></button>
-        <form action="/destinations/@des.DestinationId/delete" method="post">
-          <button type="submit" onclick="deleteMessage()" class="btn btn-danger">Delete</button>
-        </form>
-    </div>
-
-}
+        <h1>List of Destinations for, @Context.Session.GetString("name")</h1>
+        @foreach (Destination des in Model)
+        {
+            <div class="div1">
+                <div class="div2">
+                    <p>@des.Location</p>
+                    <img src="@des.Image" alt="@des.Location">
+                    <p>$@des.Budget</p>
+                <button class="btn btn-secondary"><a href="/destinations/@des.DestinationId">View</a></button>
+                <form asp-controller="Destination" asp-action="BookedNow" asp-route-destinationId="@des.DestinationId" method="POST">
+                <button class="btn btn-primary" >
+                    @{ bool alreadyBooked = des.Book.Any(b => b.UserId == Context.Session.GetInt32("uid")); }
+        
+                    @{Console.WriteLine($"here I am {alreadyBooked}");}
+                    @if (alreadyBooked)
+                    {
+                    <span>Cancel Trip</span>
+                    }
+                    else
+                    {
+                    <span>Book Trip</span>
+                    }
+                </button>
+                </form>
+                </div>
+            </div>
+        }

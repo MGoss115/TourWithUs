@@ -1,6 +1,6 @@
 @model User
+<h2>Register</h2>
 <div class="column">
-    <h2>Register</h2>
     <form action="/register" method="post">
         <section>
             <label asp-for="FirstName"></label>
@@ -27,6 +27,6 @@
             <input type="password" asp-for="PasswordConfirm" >
             <span asp-validation-for="PasswordConfirm"></span>
         </section>
-        <button>Register and Login</button>
+        <button class="btn btn-outline-warning">Register and Login</button>
     </form>
 </div>

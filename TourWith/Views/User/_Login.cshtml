@@ -1,6 +1,6 @@
 @model LoginUser
-<div class="column">
-    <h2>Login</h2>
+<h2>Login</h2>
+<div class="row">
     <form action="/login" method="post">
         <section>
             <label for="LoginEmail">Email</label>
@@ -12,6 +12,6 @@
             <input asp-for="LoginPassword">
             <span asp-validation-for="LoginPassword"></span>
         </section>
-        <button>Login</button>
+        <button class="btn btn-outline-warning">Login</button>
     </form>
 </div>

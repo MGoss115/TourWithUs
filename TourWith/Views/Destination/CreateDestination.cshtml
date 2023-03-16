@@ -1,6 +1,4 @@
  <link rel="stylesheet" href="~/js/site.js">
-<link rel="stylesheet" href="~/css/site.css">
-
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -11,23 +9,25 @@
 
 @foreach (var destination in Model)
 {
-    <div class="col" >
-        <div class="card">
-        <h3>@destination.Location</h3>
-        <img src="@destination.Image" alt="@destination.Location" />
-        <h4>$@destination.Budget</h4>
-        <br>     
-        <form action="/adddestination" method="post" >
-            <input type="hidden" name="Location" value="@destination.Location" />
-            <input type="hidden" name="Image" value="@destination.Image" />
-            <input type="hidden" name="Budget" value="@destination.Budget" />
-            <input type="hidden" name="Comment" value="@destination.Comment" />
-            <input type="hidden" name="Days" value="@destination.Days" />
-            <button type="submit" onclick="showMessage()" class="btn btn-primary">Add To List</button>
-        </form>
-        </div>
-        <br>
-    </div>
+        int num = @destination.Book.Count;
+         <main>
+            <div class="div2">
+                <img img src="@destination.Image" alt="@destination.Location">
+                    <h5>@destination.Location</h5>
+                    <h4>$@destination.Budget</h4>
+                    <p>Last updated 3 mins ago</p>
+                    <p>Booked by: @num people</p>
+                <form action="/adddestination" method="post" >
+                    <input type="hidden" name="Location" value="@destination.Location" />
+                    <input type="hidden" name="Image" value="@destination.Image" />
+                    <input type="hidden" name="Budget" value="@destination.Budget" />
+                    <input type="hidden" name="Comment" value="@destination.Comment" />
+                    <input type="hidden" name="Days" value="@destination.Days" />
+                    <button type="submit" onclick="showMessage()" class="btn btn-primary">Add To List</button>
+                </form> 
+                  <br>
+                </div>
+        </main>
 }
 
 
