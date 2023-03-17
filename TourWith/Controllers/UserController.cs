@@ -89,21 +89,12 @@ public class UserController : Controller
         }
     }
 
+    [SessionCheck]
     [HttpGet("logout")]
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
         return RedirectToAction("Index");
-    }
-
-    [HttpGet("success")]
-    public IActionResult Success()
-    {
-        if (HttpContext.Session.GetInt32("uid") == null)
-        {
-            return RedirectToAction("Index");
-        }
-        return View();
     }
 }
 public class SessionCheckAttribute : ActionFilterAttribute
